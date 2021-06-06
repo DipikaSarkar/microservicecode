@@ -20,11 +20,11 @@ public class HotelController {
 	HotelService hotelService;
 
 	@GetMapping("/hotels")
-	public List<Hotel> getHotels(@RequestParam(defaultValue = "0") Integer pageNo,
-			@RequestParam(defaultValue = "10") Integer pageSize)
+	public List<Hotel> getHotels(@RequestParam(defaultValue = "0") Integer page,
+			@RequestParam(defaultValue = "10") Integer size)
 
 	{
-		List<Hotel> hotelList = hotelService.getAllHotelList(pageNo, pageSize);
+		List<Hotel> hotelList = hotelService.getAllHotelList(page, size);
 		return hotelList;
 
 	}

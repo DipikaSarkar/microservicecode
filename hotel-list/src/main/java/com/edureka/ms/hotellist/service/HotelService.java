@@ -24,6 +24,7 @@ public class HotelService {
 	
 	
 	public List<Hotel> getAllHotelList(Integer pageNo, Integer pageSize) {
+		System.out.println("Page No: "+pageNo);
 		Pageable paging = PageRequest.of(pageNo, pageSize, Sort.by("id"));
 		 
         Page<Hotel> pagedResult = repository.findAll(paging);
