@@ -37,8 +37,8 @@ public class HotelService {
 	}
 
 
-	public void save(Hotel newHotel) {
-		Hotel hhotelDB = repository.findById(newHotel.getId()).get();
+	public void save(Long id, Hotel newHotel) {
+		Hotel hhotelDB = repository.findById(id).get();
 		hhotelDB.setName(newHotel.getName());
 		hhotelDB.setDescription(newHotel.getDescription());
 		hhotelDB.setCity(newHotel.getCity());

@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -26,14 +27,13 @@ public class HotelController {
 	{
 		List<Hotel> hotelList = hotelService.getAllHotelList(page, size);
 		return hotelList;
-
 	}
 
-	@RequestMapping(value = "/hotels", 
+	@RequestMapping(value = "/hotels/{id}", 
 			  produces = "application/json", 
 			  method=RequestMethod.PUT)
-	public void newHotel(@RequestBody Hotel newHotel) {
-		hotelService.save(newHotel);
+	public void newHotel(@RequestBody Hotel newHotel, @PathVariable Long id) {
+		hotelService.save(id, newHotel);
 	}
 
 }
