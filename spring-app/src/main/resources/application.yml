@@ -1,0 +1,10 @@
+github:
+  client:
+    clientId: myclient
+    clientSecret: edureka
+    scope: read
+    accessTokenUri: http://localhost:9000/oauth/token
+    userAuthorizationUri: http://localhost:9000/oauth/authorize
+    clientAuthenticationScheme: form
+  resource:
+    userInfoUri: http://localhost:9000/user/me

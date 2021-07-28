@@ -1,0 +1,25 @@
+spring:
+    server:
+        servlet:
+            session:
+                cookie:
+                    name: MYSESSIONID
+    security:
+        oauth2:
+          client:
+            registration:
+              custom-client:
+                client-id: 925426331361384
+                client-secret: 61de487768248abe6b40f561037001c3
+                client-name: Auth Server
+                scope: read
+                provider: custom-provider
+                redirect-uri: http://localhost:8080/login/oauth2/code/
+                client-authentication-method: basic
+                authorization-grant-type: authorization_code
+            provider:
+              custom-provider:
+                token-uri: http://localhost:9000/oauth/token
+                authorization-uri: http://localhost:9000/oauth/authorize
+                user-info-uri: http://localhost:9000/user/me
+                user-name-attribute: name

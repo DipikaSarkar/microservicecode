@@ -34,8 +34,11 @@ public class OAuth2AuthorizationServer extends AuthorizationServerConfigurerAdap
 
 	@Override
 	public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
-		clients.inMemory().withClient(ClientID).secret(passwordEncoder.encode(ClientSecret))
-				.authorizedGrantTypes("authorization_code").scopes("user_info").autoApprove(true)
+		clients.inMemory().withClient(ClientID)
+				.secret(passwordEncoder.encode(ClientSecret))
+				.authorizedGrantTypes("authorization_code")
+				.scopes("user_info")
+				.autoApprove(true)
 				.redirectUris(RedirectURLs);
 	}
 }

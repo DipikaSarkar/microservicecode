@@ -1,0 +1,27 @@
+spring:
+    server:
+        servlet:
+            session:
+                cookie:
+                    name: MYSESSIONID
+    security:
+        oauth2:
+          client:
+            registration:
+              custom-client:
+                client-id: 925426331361384
+                client-secret: 61de487768248abe6b40f561037001c3
+                client-name: Auth Server
+                scope:
+                 - email
+                 - public_profile
+                provider: custom-provider
+                redirect-uri: http://localhost:8080/login/oauth2/code/
+                client-authentication-method: basic
+                authorization-grant-type: authorization_code
+            provider:
+              custom-provider:
+                token-uri: https://graph.facebook.com/oauth/access_token
+                authorization-uri: https://www.facebook.com/dialog/oauth
+                user-info-uri: https://graph.facebook.com/user/me
+                user-name-attribute: name
