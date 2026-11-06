@@ -20,7 +20,7 @@ public class HotelController {
 	@Autowired
 	HotelService hotelService;
 
-	@GetMapping("/hotels")
+	@GetMapping("/hotel")
 	public List<Hotel> getHotels(@RequestParam(defaultValue = "0") Integer page,
 			@RequestParam(defaultValue = "10") Integer size)
 
